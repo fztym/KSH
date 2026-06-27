@@ -122,6 +122,12 @@ public:
         delete tmp;
         --size;
     }
+    const T& front() {
+        return head->val;
+    }
+    const T& back() {
+        return tail->val;
+    }
     size_t size()
     {
         return size;
