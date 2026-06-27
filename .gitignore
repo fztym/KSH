@@ -1,0 +1,6 @@
+!include/
+!tests/
+!.clang-tidy
+!CmakeLists.txt
+
+build/

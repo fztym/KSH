@@ -1,0 +1,13 @@
+Checks: >
+  clang-analyzer-*,
+  cppcoreguidelines-*,
+  modernize-*,
+  readability-*,
+  performance-*,
+  bugprone-*
+
+WarningsAsErrors: ''
+
+CheckOptions:
+  - key: readability-identifier-naming.VariableCase
+    value: camelBack
