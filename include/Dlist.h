@@ -1,10 +1,11 @@
+#ifndef DLIST_H
+#define DLIST_H
+
 template <typename T>
 class DList
 {
 public:
-    // 默认 构造
     Dlist() = default;
-    // 拷贝 构造
     Dlist(const Dlist &other) noexcept
     {
         ListNode *curr = other.head;
@@ -14,7 +15,6 @@ public:
             curr = curr->next;
         }
     }
-    // 拷贝 赋值
     Dlist &operator=(const Dlist &other) noexcept
     {
         if (this != &other)
@@ -29,14 +29,12 @@ public:
         }
         return *this;
     }
-    // 移动 构造
     Dlist(Dlist &&other) noexcept : head(other.head), tail(other.tail), size(other.size)
     {
         other.head = nullptr;
         other.tail = nullptr;
         other.size = nullptr;
     }
-    // 移动 赋值
     Dlist &operator=(Dlist &&other) noexcept
     {
         if (this != &other)
@@ -50,7 +48,6 @@ public:
         }
         return *this;
     }
-    // 析构
     ~Dlist()
     {
         clear();
@@ -125,12 +122,6 @@ public:
         delete tmp;
         --size;
     }
-    void erase(ListNode *curr)
-    {
-        if (curr = nullptr)
-        {
-                }
-    }
     size_t size()
     {
         return size;
@@ -163,3 +154,5 @@ private:
     ListNode *tail = nullptr;
     size_t size = 0;
 };
+
+#endif // DLIST_H
